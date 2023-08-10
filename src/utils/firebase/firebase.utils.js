@@ -11,12 +11,12 @@ import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBVkv4x-FXOTegpgIm6SXkOgb49RPqeVqA",
-  authDomain: "king-shop-db-8f40e.firebaseapp.com",
-  projectId: "king-shop-db-8f40e",
-  storageBucket: "king-shop-db-8f40e.appspot.com",
-  messagingSenderId: "611271018722",
-  appId: "1:611271018722:web:8a38b9276f8f2f5ba236bb",
+  apiKey: "AIzaSyB2p68IYS_8LZszZGayuhyjvVQAZB6jcio",
+  authDomain: "king-clothing-app.firebaseapp.com",
+  projectId: "king-clothing-app",
+  storageBucket: "king-clothing-app.appspot.com",
+  messagingSenderId: "291140327403",
+  appId: "1:291140327403:web:1e07692dc75bbd75786bae",
 };
 
 // Initialize Firebase
@@ -43,7 +43,6 @@ export const createUserDocumentFromAuth = async (
 
   const userSnapshot = await getDoc(userDocRef);
 
-  // create the doc if it does not exists
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -74,4 +73,3 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
-
